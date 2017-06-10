@@ -50,7 +50,7 @@ In order to connect to the internal Worker nodes, setup SSH Tunneling and config
 3. Start the Drill Shell:
 
     ```bash
-     ./apache-drill-1.10.0/conf/drill-conf.sh
+     sudo ./var/lib/drill/apache-drill-1.10.0/conf/drill-conf.sh
     ```
 4. Verify everything's working with a simple SELECT
 

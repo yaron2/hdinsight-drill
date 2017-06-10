@@ -10,6 +10,8 @@ cd jars/3rdparty/
 sudo wget http://central.maven.org/maven2/org/apache/hadoop/hadoop-azure/2.7.1/hadoop-azure-2.7.1.jar
 sudo wget http://central.maven.org/maven2/com/microsoft/azure/azure-storage/2.0.0/azure-storage-2.0.0.jar
 
+cd /var/lib/drill
+
 wget http://apache.mirrors.hoobly.com/drill/drill-1.10.0/apache-drill-1.10.0.tar.gz
 tar -xzvf apache-drill-1.10.0.tar.gz
 

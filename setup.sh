@@ -33,3 +33,12 @@ fi
 sed -i "s@localhost:2181@$ZKHOSTS@" $DRILLDIR/conf/drill-override.conf
 ln -s /etc/hadoop/conf/core-site.xml $DRILLDIR/conf/core-site.xml
 $DRILLDIR/bin/drillbit.sh restart
+
+cd /var/lib/drill/$DRILLDIR
+
+STATUS=$(./bin/drillbit.sh status)
+echo $STATUS
+if [[ $STATUS != "drillbit is running." ]]; then
+	>&2 echo "Drill installation failed"
+	exit 1
+fi

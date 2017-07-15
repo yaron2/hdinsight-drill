@@ -23,6 +23,11 @@ cd /var/lib/drill/$DRILLDIR/jars/3rdparty
 sudo wget http://central.maven.org/maven2/org/apache/hadoop/hadoop-azure/2.7.1/hadoop-azure-2.7.1.jar
 sudo wget http://central.maven.org/maven2/com/microsoft/azure/azure-storage/2.0.0/azure-storage-2.0.0.jar
 
+cd /var/lib/drill/$DRILLDIR/jars
+
+sudo wget http://central.maven.org/maven2/org/apache/hadoop/hadoop-azure-datalake/3.0.0-alpha1/hadoop-azure-datalake-3.0.0-alpha1.jar
+sudo wget http://central.maven.org/maven2/com/microsoft/azure/azure-data-lake-store-sdk/2.1.5/azure-data-lake-store-sdk-2.1.5.jar
+
 cd /var/lib/drill
 
 ZKHOSTS=`grep -R zookeeper /etc/hadoop/conf/yarn-site.xml | grep 2181 | grep -oPm1 "(?<=<value>)[^<]+"`

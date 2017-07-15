@@ -72,16 +72,10 @@
         <OSType>Linux</OSType>
     </appender>
 
-    <appender name="Etw" class="com.microsoft.log4jappender.logback.LogbackEtwAppender">
-        <source>HadoopServiceLog</source>
-        <OSType>Linux</OSType>
-    </appender>
-
   <logger name="org.apache.drill" additivity="false">
     <level value="info" />
     <appender-ref ref="FILE" />
     <appender-ref ref="EtwMetrics" />
-    <appender-ref ref="Etw" />
   </logger>
 
   <logger name="query.logger" additivity="false">

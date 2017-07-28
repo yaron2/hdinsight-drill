@@ -50,9 +50,9 @@ In order to connect to the internal Worker nodes, setup SSH Tunneling and config
 3. Start the Drill Shell:
 
     ```bash
-     sudo ./var/lib/drill/apache-drill-1.10.0/conf/drill-conf.sh
+     sudo ./var/lib/drill/apache-drill-1.10.0/bin/drill-conf
     ```
-4. Verify everything's working with a simple SELECT
+4. Verify everything's working with a simple SELECT to query the drillbits
 
     ```bash
     SELECT * FROM sys.drillbits;
@@ -61,6 +61,23 @@ In order to connect to the internal Worker nodes, setup SSH Tunneling and config
 ### Using the Drill UI
 
 After establishig the SSH tunneling, obtain an IP address of any Worker node as described above and go to http://node-ip:8047
+
+### Using Azure Blob Storage
+
+In order to query data from Azure Blob Storage, you first need to add it to the list of plugins.
+To do so, connect to the Drill UI and navigate to the Storage page.
+
+Then do the following:
+
+1. Click on the Update button for the dfs plugin, and copy its contents.
+2. Enter a name for your Azure account at the bottom of the page and click the Create button.
+3. Delete the null value and paste the contents you copied earlier.
+4. Change "file:///" to  "wasb://mycontainer@mydatafiles.blob.core.windows.net/" and change the container and account name accordingly.
+
+See [here] for more info on Drill and Azure Blob Storage.
+
+[here]: https://blogs.msdn.microsoft.com/data_otaku/2016/05/30/configuration-of-azure-blob-storage-aka-wasb-as-a-drill-data-source/
+
 
 
 
